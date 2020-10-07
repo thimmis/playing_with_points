@@ -3,7 +3,7 @@
 # @Date:   2020-09-23T11:50:37+02:00
 # @Email:  thomas.benjamin.turner@gmail.com
 # @Last modified by:   thomas
-# @Last modified time: 2020-09-25T12:00:48+02:00
+# @Last modified time: 2020-10-07T22:30:00+02:00
 
 import pointer, matrix, data_model, validate_output
 
@@ -33,6 +33,6 @@ class ViewModel:
     def __call__(self, ops_list):
         '''Moves the pointer around and validates end position. Returns the
         results to the user.'''
-        move_list = data_model.DataModel.algorithm_frame(self.pointer, ops_list)
+        move_list = data_model.DataModel.algorithm_frame(self.pointer, self.matrix, ops_list)
         data, message = v_o.check_end_position(move_list,self.matrix)
         return data, message

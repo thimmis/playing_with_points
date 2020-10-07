@@ -2,11 +2,11 @@
 # @Date:   2020-09-24T18:06:58+02:00
 # @Email:  thomas.benjamin.turner@gmail.com
 # @Last modified by:   thomas
-# @Last modified time: 2020-09-25T14:44:16+02:00
+# @Last modified time: 2020-10-07T22:28:23+02:00
 
 
 
-import pointer_actions
+import pointer_actions, matrix_actions
 
 
 
@@ -25,7 +25,7 @@ class MovementAlgorithm:
         Performs the actions and updates the pointer object attributes.
 
     '''
-    def do_action(self, number, pointer):
+    def do_action(self, number, pointer, matrix):
         '''
         Takes a single number and the pointer and updates the attributes based
         on which number was given.
@@ -44,13 +44,18 @@ class MovementAlgorithm:
 
         '''
         p_act = pointer_actions.PointerActions()
+        m_act = matrix_actions.MatrixActions()
         action = p_act.get_correct_action(number)
         scalar, x_y = p_act.direction_scalar(pointer)
-        if number ==1:
+        if number == 1:
             p_act.move_one_step(x_y, scalar, action, pointer)
         if number == 2:
             p_act.move_one_step(x_y, scalar, action, pointer)
-        if number ==3:
+        if number == 3:
             p_act.rotate_pointer(action,pointer)
-        if number ==4:
+        if number == 4:
             p_act.rotate_pointer(action,pointer)
+        if number == 5:
+            m_act.rotate_matrix(90, pointer, matrix)
+        if number == 6:
+            m_act.rotate_matrix(-90, pointer, matrix)

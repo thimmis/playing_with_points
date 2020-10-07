@@ -3,7 +3,7 @@
 # @Date:   2020-09-23T11:50:37+02:00
 # @Email:  thomas.benjamin.turner@gmail.com
 # @Last modified by:   thomas
-# @Last modified time: 2020-09-25T14:37:42+02:00
+# @Last modified time: 2020-10-07T22:30:27+02:00
 
 import numpy as np
 import algorithm
@@ -24,7 +24,7 @@ class DataModel:
         to a list.
 
     '''
-    def algorithm_frame(pointer, operation_list):
+    def algorithm_frame(pointer, matrix, operation_list):
         '''
         Does the algorithm.
 
@@ -48,7 +48,7 @@ class DataModel:
         moves_ = [[pointer.position, pointer.heading]]
         for operation in operation_list:
             if operation !=0:
-                alg.do_action(operation,pointer)
+                alg.do_action(operation,pointer,matrix)
                 moves_.append([pointer.position, pointer.heading])
             else:
                 break

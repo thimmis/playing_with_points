@@ -3,7 +3,7 @@
 # @Date:   2020-09-24T11:00:36+02:00
 # @Email:  thomas.benjamin.turner@gmail.com
 # @Last modified by:   thomas
-# @Last modified time: 2020-09-25T14:39:53+02:00
+# @Last modified time: 2020-10-07T23:02:59+02:00
 
 import textwrap as tw
 
@@ -50,5 +50,5 @@ class Constants:
         None
 
         '''
-        message =tw.fill("""Tell the point how you want it to move by giving it a list of numbers from 0-1. '1' tells the point to move forward 1 step in the direction it is facing (default is up). '2' tells the point to move backwards one step facing the same direction. '3 & 4' tell the point to rotate 90 degrees to the right and left, respectively. '0' tells the point to stop moving and evaluate position, will auto-append one to the end if please enter numbers from 0-4 separated by comma here: """,width=55)
+        message =tw.fill("""Tell the point how you want it to move by giving it a list of numbers from 0-6. '1' tells the point to move forward 1 step in the direction it is facing (default is up). '2' tells the point to move backwards one step facing the same direction. '3 & 4' tell the point to rotate 90 degrees to the right and left, respectively. '5 & 6' rotate the matrix and the pointer about the point (0,0) and rotates the pointer based on the direction of rotation.'0' tells the point to stop moving and evaluate position, will auto-append one to the end if please enter numbers from 0-4 separated by comma here: """,width=55)
         print(message)

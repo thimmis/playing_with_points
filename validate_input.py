@@ -3,7 +3,7 @@
 # @Date:   2020-09-23T11:12:09+02:00
 # @Email:  thomas.benjamin.turner@gmail.com
 # @Last modified by:   thomas
-# @Last modified time: 2020-09-25T12:36:40+02:00
+# @Last modified time: 2020-10-07T20:41:18+02:00
 
 import sys
 import numpy as np
@@ -81,6 +81,9 @@ class ValidateInput:
         Checks if the user input is of the correct values and will prompt the
         user for input until it only has values from 0 to 4.
 
+        update:
+        Will be accept 0-6, to allow for rotating the entire space.
+
         Parameters:
         -----------
         None
@@ -96,7 +99,7 @@ class ValidateInput:
             obj = sys.stdin.readline().rstrip().split(',')
             try:
                 for i in range(len(obj)):
-                    obj[i] = int(obj[i],5)
+                    obj[i] = int(obj[i],7)#Looks for numbers below the stated integer.
 
             except ValueError:
                 print('One or more of your numbers incorrect, try again...')
