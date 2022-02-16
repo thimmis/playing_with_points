@@ -24,7 +24,7 @@ space and the initial position of a point. Then it takes in a string of
 numbers from 0-4 that defining the actions that the point can do.
 
 The matrix is set up with the origin in the top left corner
-'''
+```
 
   (0,0)               (0,n)
     -------------------
@@ -35,7 +35,7 @@ The matrix is set up with the origin in the top left corner
     |                 |
     -------------------
    (m,0)              (m,n)
-'''
+```
 
 0: ends the movement and evaluates final position.
 1: moves the point forward one step in the direction it is facing
